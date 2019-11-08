@@ -1,0 +1,70 @@
+﻿@model Response
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .field-validation-error,
+        .validation-summary-error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Please fill out this form</p>
+    <div class="container">
+        <form method="post" asp-action="ProcessMe">
+            <div class="form-group row">
+                <label for="firstName" class="col-sm-5 col-form-label">First Name</label>
+                <div class="col-sm-7">
+                    <input type="text" asp-for="FirstName" class="form-control" id="firstName" placeholder="First Name">
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-5 col-form-label">Email</label>
+                <div class="col-sm-7">
+                    <input type="email" asp-for="Email" class="form-control" id="email" placeholder="Email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-sm-5 col-form-label">Phone</label>
+                <div class="col-sm-7">
+                    <input type="text" asp-for="Phone" class="form-control" id="phone" placeholder="999-999-9999">
+                    <span asp-validation-for="Phone"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dateJoined" class="col-sm-5 col-form-label">Date</label>
+                <div class="col-sm-7">
+                    <input type="date" asp-for="Date" class="form-control" id="dateJoined" placeholder="mm/dd/yyyy">
+                    <span asp-validation-for="Date"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="FavoriteNumber" class="col-sm-5 col-form-label">Favorite Number</label>
+                <div class="col-sm-7">
+                    <input type="text" asp-for="FavoriteNumber" class="form-control" id="FavoriteNumber" placeholder="1-10">
+                    <span asp-validation-for="FavoriteNumber"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <div asp-validation-summary="All"></div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
